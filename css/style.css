@@ -1,0 +1,160 @@
+/* --------------- Global Reset ------------------ */
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* --------------- Global Styles ------------------ */
+body
+{
+    color: #3d3d3d;
+    background-color: #BED8D4;
+    font-family: monospace;
+    text-align: center;
+}
+
+button
+{
+    cursor: pointer; 
+}
+
+main
+{
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 80px;
+    text-align: center;
+
+    /** clear floats **/
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 481px)
+{
+    main
+    {
+        padding-top: 40px;
+    }
+}
+
+h1
+{
+    font-size: 42px;
+    margin-top: 20px;
+}
+/* --------------- Section.display Styles ------------------ */
+.board
+{
+    max-width: 350px;
+    float: left;
+}
+@media screen and (max-width: 481px)
+{
+    .board
+    {
+        float: none;
+    }
+}
+
+
+.board button
+{
+    width: 150px;
+    height: 150px;
+    border: none;
+    outline: none;
+
+    box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+}
+/*.board button:active
+{
+    box-shadow: 0px 2px 7px;
+
+}*/
+
+.button-1
+{
+    background-color: #FF5643;
+}
+.button-2
+{
+    background-color: dodgerblue;
+}
+.button-3
+{
+    background-color: #FEEF33;
+}
+.button-4
+{
+    background-color: #BEDE15;
+}
+
+
+/* --------------- Section.Controls Styles ------------------ */
+.controls
+{
+    float: right;
+    margin-left: 30px;
+    padding-top: 80px;
+}
+@media screen and (max-width: 481px)
+{
+    .controls
+    {
+        float: none;
+        margin-left: 0;
+        padding-top: 20px;
+    }
+}
+
+.controls button
+{
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    display: block;
+    font: bold 18px monospace;
+    outline: none;
+    margin: 0 auto 20px;
+    padding: 15px 30px;
+    transition: all 0.3s;
+}
+.controls button:first-child
+{
+    background-color: #43bccd;
+    box-shadow: 0px 10px #0592a5;
+}
+.controls button:first-child:active
+{
+    box-shadow: 0px 3px #0592a5;
+}
+
+.controls button:nth-child(2)
+{
+    background-color: #ff3a4e;
+    box-shadow: 0 10px #e21f33;
+}
+.controls button:nth-child(2):active
+{
+    box-shadow: 0 3px #e21f33;
+}
+
+.controls button:hover
+{
+    color: #f2efC7;
+}
+
+p.test-output
+{
+    font-size: 16px;
+}
+
+/* --------------- Experimental Styles ------------------ */
+.lit
+{
+    background-color: magenta;
+}
