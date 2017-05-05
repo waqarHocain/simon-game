@@ -11,7 +11,7 @@
 body
 {
     color: #3d3d3d;
-    background-color: #BED8D4;
+    background-color: #eee;
     font-family: monospace;
     text-align: center;
 }
@@ -68,13 +68,9 @@ h1
     border: none;
     outline: none;
 
-    box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+    /*a hack to fight extra white space*/
+    margin-top: -3px;
 }
-/*.board button:active
-{
-    box-shadow: 0px 2px 7px;
-
-}*/
 
 .button-1
 {
@@ -153,8 +149,31 @@ p.test-output
     font-size: 16px;
 }
 
+
+.mode
+{
+    font-weight: bold;
+    padding: 10px 0 20px;
+}
+
+.mode input + label
+{
+    cursor: pointer;
+}
+.mode input 
+{
+    outline: none;
+    height: 15px;
+    width: 15px;
+}
+
+.state
+{
+    font-weight: bold;
+}
 /* --------------- Experimental Styles ------------------ */
 .lit
 {
-    background-color: magenta;
+    background-color: #798478;
+    transition: all 0.2s;
 }
