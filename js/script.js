@@ -9,8 +9,9 @@ var state_container = $(".state"),
 // game state
 var round = 1,
 	board_is_locked = true,
-	sequence = [],
 	strict_mode_enabled = false,
+	game_won = false,
+	sequence = [],
 	current_sequence = [];
 
 
@@ -110,10 +111,16 @@ function reset_game() {
 	window.clearTimeout();	
 }
 
+function check_game_state() {
+	if (round == 20) {
+		game_won = true;
+	}
+}
 
 function reset_game_data() {
 	round = 1;
 	board_is_locked = true;
+	game_won = false;
 	current_sequence = [];
 	sequence = [];
 }
@@ -137,6 +144,16 @@ function user_click_handler(e) {
 
 	if (user_move == desired_move) {
 		if (current_sequence.length == 0) {
+			check_game_state();
+			if (game_won) {
+				reset_game_data();
+				reset_game();
+				
+				state_container.html("YOU WON!!!");
+
+				window.setTimeout(start_new_game, 2000);
+			}
+
 			round++;
 			window.setTimeout(start_new_round, 800);
 			return null;
