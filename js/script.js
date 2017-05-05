@@ -161,6 +161,7 @@ function user_click_handler(e) {
 	}
 	else {
 		state_container.html("YOU MADE A MISTAKE!!!");
+		board_is_locked = true;
 
 		if (strict_mode_enabled) {
 			window.setTimeout(start_new_game, 800);
