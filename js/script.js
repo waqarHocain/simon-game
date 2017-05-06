@@ -15,6 +15,20 @@ var round = 1,
 	current_sequence = [];
 
 
+// preload all audio files
+var audios = {
+	"audio1": new Audio("audio/btn-1.mp3"),
+	"audio2": new Audio("audio/btn-2.mp3"),
+	"audio3": new Audio("audio/btn-3.mp3"),
+	"audio4": new Audio("audio/btn-4.mp3")
+}
+
+$.each(audios, function(key, value) {
+	audios[key].preload = "auto";
+	audios[key].load();
+});
+
+
 // attach event listeners
 btn_play.on("click", start_new_game);
 btn_reset.on("click", reset_game);
@@ -73,8 +87,10 @@ function animate(elem) {
 
 
 function play_audio(elem) {
-	var audio = document.createElement("audio");
-	audio.src = "./audio/btn-" + $(elem).data("id") + ".mp3";
+	var elem_id = $(elem).data("id");
+
+	var audio = audios["audio" + elem_id].cloneNode();
+	audio.volume = 1;
 	audio.play();
 }
 
